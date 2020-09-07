@@ -1,0 +1,46 @@
+{% extends 'StudyGroup_app/home.html' %}
+
+{% block content2 %}
+<br>
+<div style = "text-align: center; font-size: 50px;">
+<form action = "{% url 'StudyGroup_app:new_course' %}" method = 'post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	
+
+	<button style = "
+	font-family: 'Khula', sans-serif;
+	font-size: 50px;
+	text-align: center;
+	background-color:rgba(192, 163, 16, 0.52);
+	border:none;"
+	name = "submit"> SUBMIT </button>
+
+	
+</form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock content2 %}

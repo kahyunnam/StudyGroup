@@ -1,0 +1,20 @@
+{% extends "StudyGroup_app/base.html" %}
+
+{% block content %}
+
+	<form method = "post" action = "{% url 'users:register' %}">
+		{% csrf_token %}
+		{{ form.as_p }}
+
+		<button name = "submit" style = "
+		font-family: 'Khula', sans-serif;
+		font-size: 50px;
+		text-align: center;
+		background-color:rgba(192, 163, 16, 0.52);
+		border:none;"> Create Profile 
+		</button>
+
+		<input type = "hidden" name = "next" value = "{% url 'StudyGroup_app:home' %}" />
+	</form>
+
+{% endblock content %}

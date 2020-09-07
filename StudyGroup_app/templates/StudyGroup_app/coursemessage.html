@@ -1,0 +1,29 @@
+{% extends 'StudyGroup_app/base.html' %}
+
+{% block content %}
+
+<h4 style = 
+"font-family: 'Thasadith', sans-serif;
+text-align: center;
+font-size: 30px;
+color: black;"> {{ course }} </h4>
+<br>
+
+{% for message in messages %}
+	<p> {{message.owner}} wrote this message on
+	{{message.date_added}} at {{message.time_added}} </p>
+	<p> {{message.message_text}} </p>
+	<br>
+	<br>
+{% empty %}
+	<p>  </p>
+	<br>
+	<br>
+	
+{% endfor %}
+<p>
+	<a href = "{% url 'StudyGroup_app:new_message' course.id %}"style = " text-align: center; font-size: 20px;font-family: 'Khula', sans-serif;"> WRITE A MESSAGE </a>
+</p>
+{% block content3 %}
+{% endblock content3 %}
+{% endblock content %}

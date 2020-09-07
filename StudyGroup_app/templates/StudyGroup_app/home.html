@@ -1,0 +1,75 @@
+{% extends "StudyGroup_app/base.html" %}
+
+{% block content %}
+<h3 style = 
+"text-align:center;
+margin: 150px;
+font-family: 'Khula', sans-serif;
+font-size: 30px;"
+>
+	Welcome to StudyGroup! Use StudyGroup to connect and collaborate with other students
+	in similar courses.
+</h3>
+
+<h4 style = 
+"font-family: 'Khula', sans-serif;
+text-align: center;
+font-size: 30px";>
+	Other Students Are Studying:
+</h4>
+{% for course in courses %}
+	<h4 style = 
+	"font-family: 'Thasadith', sans-serif;
+	text-align: center;
+	font-size: 30px;
+	color: black;"
+	>
+		<a href = "{% url 'StudyGroup_app:coursemessage' course.id %}" 
+		style = "text-decoration: none;"
+		>{{course}}</a>
+	</h4>
+	<br>
+{% empty %}
+	<h4 style = 
+	"font-family:'Thasadith', sans-serif;
+	text-align: center;
+	font-size: 30px;">
+		
+	</h4> 
+{% endfor %}
+
+
+
+<h4 style = 
+"font-family: 'Khula', sans-serif;
+text-align: center;
+font-size: 20px;">
+
+
+<a style = 
+"font-family: 'Khula', sans-serif;
+text-align: center;
+font-size: 50px;
+text-decoration: none;
+color:black"
+href = "{% url 'StudyGroup_app:new_course' %}">
+ADD A COURSE
+</a>
+
+</h4>
+
+
+	{% block content2 %}
+	{% endblock content2 %}
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+{% endblock content %}
