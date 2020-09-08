@@ -55,8 +55,9 @@ def new_message(request, course_id):
 			new_message.save()
 
 			return redirect('StudyGroup_app:coursemessage', course_id = course_id)
-
-	context = {'course':course, 'form':form}
+	course = Course.objects.get(id = course_id)
+	messages = course.message_set.order_by('-date_added', '-time_added')
+	context = {'course':course, 'form':form,'messages':messages}
 	return render(request, 'StudyGroup_app/new_message.html',context)	
 
 
