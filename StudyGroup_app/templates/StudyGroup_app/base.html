@@ -1,88 +1,45 @@
+{% load static %} 
+
 <head>
 	<title> StudyGroup </title>
-	<link href="https://fonts.googleapis.com/css2?family=Khula:wght@300&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Thasadith&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" type="text/css" href="{% static 'StudyGroup_app/base_style.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Kufam:wght@500&display=swap" rel="stylesheet">
 </head>
-<section 
-style = "background-color:rgba(22, 50, 140, 0.2);"
->
+
+<section >
+
 <h1>
-	<a href = "{% url 'StudyGroup_app:home' %}" 
-	style = 
-	"text-decoration: none; 
-	font-family: 'Khula', sans-serif;
-	font-size: 50px;
-	float: left;
-	display:inline-block;
-	color:rgb(207, 117, 6);
-	font-weight: 900;
-	margin-left: 25px" 
-	> 
+	<a href = "{% url 'StudyGroup_app:home' %}" id = "title">
 	
-	STUDYGROUP </a>
+	StudyGroup </a>
 </h1>
 
 
 {% if user.is_authenticated %}
 <h2><a
 href = "{% url 'users:logout' %}"
-style =
-"float: right;
-font-family: 'Khula', sans-serif;
-font-size: 20px;
-margin-right: 25px;
-text-decoration: none; 
-display: inline-block;
- ">
+id = "account">
 	Log Out
-</a>
-</h2>
-<h2
-style = 
-"float: right;
-display: inline-block;
-margin-right: 25px;
-font-size: 20px;
-font-family: 'Khula', sans-serif;
-color: rgb(212, 146, 49);"
->
+</a></h2>
+
+<h2 id = "account">
 	Hello, {{user.username}}!
 </h2>
 
 
 {% else %}
 <h2>
-<a href = "{% url 'users:register' %}"
-style =
-"float: right;
-font-family: 'Khula', sans-serif;
-font-size: 20px;
-margin-right: 25px;
-display: inline-block;
-text-decoration: none; 
- ">
+<a href = "{% url 'users:register' %}" 
+id = "account">
 	New? Create a Profile!
 </a>
 </h2>
 
 <h2>
-<a 
-
-href = "{% url 'users:login' %}"
-
-style =
-"float: right;
-font-family: 'Khula', sans-serif;
-font-size: 20px;
-margin-right: 25px;
-display: inline-block;
-text-decoration: none; 
- "
->
-	Log In
-</a>
+<a href = "{% url 'users:login' %}"
+id = "account"> Log In</a>
 </h2>
+
 {% endif %}
 <br>
 <br>

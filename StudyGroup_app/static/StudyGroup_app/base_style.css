@@ -1,0 +1,21 @@
+
+a#title {
+	text-decoration: none;
+	color: black;
+	font-family: 'Kufam', cursive;
+	font-size: 50px;
+	float:left;
+	display: inline-block;
+	margin-left:25px;
+	color:black;
+}
+
+#account{
+	float: right;
+	font-family: 'Kufam', cursive;
+	font-size: 20px;
+	margin-right: 25px;
+	text-decoration: none; 
+	display: inline-block;
+
+}
